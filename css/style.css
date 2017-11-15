@@ -616,3 +616,25 @@ nav li a:hover {
 }
 
 .checkinslist h3 { color: #657B83; }
+
+/* this will outline the borders of the input fields if the input entered is invalid.  Angular js will add a class of ng-invalid if input is invalid. This style takes advantage of that dynamically added class. This styling should apply to the elements ONLY if BOTH classes, ng-invalid and ng-touched are turned on. */
+input.ng-invalid.ng-touched {
+    border: 1px solid #da3637;
+}
+
+/* This styles the element ONLY if the input is VALID AND it has been touched, so if text is entered successfully. */
+input.ng-valid.ng-touched {
+    border: 1px solid #509d12;
+} 
+
+/* This styling colors the submit button grey until all fields have been filled in with valid text. This targets any ng-invalid class that also has a button, in this case, its the "submit" button. It will stay gray until the class of ng-invalid is gone.  */
+.ng-invalid .btn {
+    background: gray;
+}
+
+/* This styles the error message red using the class, error, that was added to each input field. */
+.error {
+    color:red;
+    padding-bottom: 10px;
+}
+
